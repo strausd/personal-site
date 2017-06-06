@@ -1,15 +1,29 @@
+form {
+  z-index: 2;
+}
+
 .panel {
   background-color: rgba(0, 0, 0, 0.6);
   border: 1px solid #505050;
+  z-index: 1;
 }
 
-.form-control {
+.form-control,
+.form-control-custom {
   background-color: rgba(0, 0, 0, 0.6);
   border: 1px solid #505050;
   color: #e0e0e0;
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-control-custom {
   box-shadow: none;
 }
 
@@ -29,6 +43,34 @@
   color: black;
 }
 
+button:disabled,
+button[disabled] {
+  cursor: not-allowed;
+  background: transparent;
+  border: 2px solid #333;
+  color: #777;
+}
+button:disabled:hover,
+button[disabled]:hover {
+  background: transparent;
+  color: #777;
+}
+
 .full-width {
   width: 100%;
+}
+
+input.ng-touched.ng-invalid,
+textarea.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+.alert {
+  margin-top: 5px;
+}
+
+.alert-danger {
+  color: red;
+  background-color: rgba(99, 0, 0, 0.18);
+  border-color: red;
 }
