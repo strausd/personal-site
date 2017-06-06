@@ -9,6 +9,10 @@ body {
   color: #e0e0e0;
 }
 
+.container {
+  margin-top: 4em;
+}
+
 /*
 #background_wrap {
   z-index: -1;
