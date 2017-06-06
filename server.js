@@ -25,21 +25,22 @@ app.get('/*', function(req, res) {
 });
 
 app.post('/contact', (req, res) => {
-  var contactEmail = req.body.email;
-  var contactMessage = req.body.message;
-  console.log(`Email: ${contactEmail} --- Message: ${contactMessage}`);
-  sendmail({
-      from: 'appledes7@gmail.com',
-      to: 'appledes7@yahoo.com',
-      subject: '[*** Website Contact Form ***]',
-      html: `<p>Reply To: ${contactEmail}</p><p>Message:</p><p>${contactMessage}</p>`,
-    }, function(err, reply) {
-      console.log(err && err.stack);
-      console.dir(reply);
-  });
-  setTimeout(() => {
-    res.redirect('/contact');
-  }, 3500);
+  console.log(req.body);
+  // var contactEmail = req.body.email;
+  // var contactMessage = req.body.message;
+  // console.log(`Email: ${contactEmail} --- Message: ${contactMessage}`);
+  // sendmail({
+  //     from: 'appledes7@gmail.com',
+  //     to: 'appledes7@yahoo.com',
+  //     subject: '[*** Website Contact Form ***]',
+  //     html: `<p>Reply To: ${contactEmail}</p><p>Message:</p><p>${contactMessage}</p>`,
+  //   }, function(err, reply) {
+  //     console.log(err && err.stack);
+  //     console.dir(reply);
+  // });
+  // setTimeout(() => {
+  //   res.redirect('/contact');
+  // }, 3500);
 });
 
 app.listen(process.env.PORT || 4000, () => {

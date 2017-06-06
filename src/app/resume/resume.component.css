@@ -1,0 +1,29 @@
+.panel {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid #505050;
+}
+
+.panel-heading {
+  background-color: transparent;
+  color: #e0e0e0;
+  font-size: 1.5em;
+  border-color: #505050;
+}
+
+.skill {
+  text-align: center;
+  margin: .3em 0;
+}
+
+hr {
+  border-color: #505050;
+}
+
+.list-group-item {
+  background-color: transparent;
+  border-color: #505050;
+}
+
+a {
+  color: #e0e0e0;
+}
