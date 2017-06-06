@@ -1,10 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Http} from '@angular/http';
+import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
+  animations: [
+    trigger('messageSentConfirm', [
+      state('void', style({
+        transform: 'translateY(100%)',
+        opacity: 0
+      })),
+      state('active', style({
+        transform: 'translateX(0)',
+        opacity: 1
+      })),
+      transition('void => active', animate('500ms ease-out')),
+      transition('active => void', animate('500ms ease-in'))
+    ])
+  ]
 })
 export class ContactComponent implements OnInit {
 
@@ -13,7 +29,10 @@ export class ContactComponent implements OnInit {
   confirmEmail: string = '';
   message: string = '';
 
-  constructor() { }
+  messageSent: boolean = false;
+  messageState: string = 'void';
+
+  constructor(private http: Http) { }
 
   ngOnInit() {
     this.contact = new FormGroup({
@@ -27,8 +46,25 @@ export class ContactComponent implements OnInit {
     this.email = this.contact.value.email;
     this.confirmEmail = this.contact.value.confirmEmail;
     this.message = this.contact.value.message;
-    // this.contact.reset();
-    console.log(this.contact);
+    this.onPost();
+    this.contact.reset();
+    this.messageConfirm();
+  }
+
+  onPost() {
+    this.http.post('/contact', {
+      email: this.email,
+      message: this.message
+    }).subscribe(() => {});
+  }
+
+  messageConfirm() {
+    this.messageSent = true;
+    this.messageState = 'active'
+    setTimeout(() => {
+      this.messageSent = false;
+      this.messageState = 'void';
+    }, 3000);
   }
 
   mismatchEmails(control: FormControl): {[s: string]: boolean} {

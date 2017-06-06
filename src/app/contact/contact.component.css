@@ -74,3 +74,9 @@ textarea.ng-touched.ng-invalid {
   background-color: rgba(99, 0, 0, 0.18);
   border-color: red;
 }
+
+.alert-success {
+  color: green;
+  background-color: rgba(0, 99, 0, 0.18);
+  border-color: green;
+}

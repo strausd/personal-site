@@ -57,6 +57,13 @@
           </form>
         </div>
       </div>
+      <div
+        class="alert alert-success"
+        role="alert"
+        *ngIf="messageSent"
+        [@messageSentConfirm]="messageState">
+        Message sent successfully
+      </div>
     </div>
   </div>
 </div>
