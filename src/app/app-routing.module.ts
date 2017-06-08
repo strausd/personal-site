@@ -11,6 +11,7 @@ const routes: Routes = [
   {path: 'about', loadChildren: './about/about.module#AboutModule'},
   {path: 'resume', loadChildren: './resume/resume.module#ResumeModule'},
   {path: 'contact', loadChildren: './contact/contact.module#ContactModule'},
+  {path: 'projects', loadChildren: './projects/projects.module#ProjectsModule'},
   {path: '**', redirectTo: ''}
 ];
 @NgModule({
