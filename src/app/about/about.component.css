@@ -7,6 +7,20 @@ h4 {
   margin-bottom: 1em;
 }
 
-p {
+i {
+  font-size: 4em;
+}
 
+a {
+  color: #e0e0e0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
