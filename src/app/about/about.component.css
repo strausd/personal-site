@@ -7,7 +7,7 @@ h4 {
   margin-bottom: 1em;
 }
 
-i {
+i::before {
   font-size: 4em;
 }
 
